@@ -38,14 +38,10 @@ final class DetailCoordinator: TempoCoordinator {
     required init() {
         viewState = DetailViewState(items: [])
         updateState()
-        registerListeners()
-    }
-    
-    fileprivate func registerListeners() {
-        // Unneeded at the current momenet
     }
     
     func updateState() {
+        // Check if we have any deals loaded, if not, return empty array
         if let deal = viewController.deal {
             viewState.items = [DetailItemViewState(deal: deal)]
         } else {

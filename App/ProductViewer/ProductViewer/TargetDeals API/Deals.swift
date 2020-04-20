@@ -33,7 +33,6 @@ public final class TDAPI {
     /// - Note: Calling update will create a new `data` object as well as update the `deals` list if any new deals exist
     public func update(disbatcher: Dispatcher, completion: (() -> Void)? = nil) {
         guard let url = URL(string: "https://target-deals.herokuapp.com/api/deals") else { return }
-        print(isUpdating)
         guard !isUpdating else { return }
         self.isUpdating = true
         URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
@@ -45,7 +44,6 @@ public final class TDAPI {
             self.isUpdating = false
             for i in self.deals {
                 CacheManager.shared.cache(url: i.image, for: i.id, options: [.download, .forceOverwrite]) { image in
-                    print("Triggering update")
                     disbatcher.triggerEvent(ListImageUpdated())
                 }
             }

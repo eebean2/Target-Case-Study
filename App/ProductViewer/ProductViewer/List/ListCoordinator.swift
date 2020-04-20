@@ -73,7 +73,10 @@ class ListCoordinator: TempoCoordinator {
         // to update the state after being downloaded
         dispatcher.addObserver(ListImageUpdated.self) { [weak self] event in
             DispatchQueue.main.async {
-                self?.setNeedsUpdateState()
+
+                // The following is commented out due to a bug in updating the view
+                
+//                self?.setNeedsUpdateState()
             }
         }
     }
@@ -85,9 +88,7 @@ class ListCoordinator: TempoCoordinator {
     func setNeedsUpdateState() {
         guard !needsUpdateState else { print("State already set to update"); return }
         needsUpdateState = true
-        print("Setting state to update")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
-            print("Updating state")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.updateState()
             self.needsUpdateState = false
         }
@@ -96,16 +97,8 @@ class ListCoordinator: TempoCoordinator {
     /// Updat the current state
     func updateState() {
         viewState.listItems = deals.map { index in
-            print("Sending: " + index.title)
-            return ListItemViewState(aisle: index.aisle,
-                                     description: index.description,
-                                     image: index.image,
-                                     price: index.price,
-                                     salePrice: index.salePrice,
-                                     title: index.title,
-                                     deal: index)
+            return ListItemViewState(deal: index)
         }
-        print("State Update Sent")
     }
 }
 

@@ -18,18 +18,11 @@ struct ListViewState: TempoViewState, TempoSectionedViewState {
 
 /// View state for each list item.
 struct ListItemViewState: TempoViewStateItem {
-    public let id: UUID = UUID()
-    public let aisle: String
-    public let description: String
-    public let image: URL
-    public let price: String
-    public let salePrice: String?
-    public let title: String
     public let deal: TDDeal
 }
 
 extension ListItemViewState: Equatable {
     static func == (lhs: ListItemViewState, rhs: ListItemViewState) -> Bool {
-        return lhs.id.uuidString == rhs.id.uuidString
+        return lhs.deal.id.uuidString == rhs.deal.id.uuidString
     }
 }

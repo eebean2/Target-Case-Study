@@ -15,8 +15,10 @@ extension URL {
 
 class Downloader {
     
+    /// List of downloads currently in progress
     private var downloading: [String] = []
     
+    /// Download an image
     public func downloadImage(url: URL, for key: String, attempt: Int = 0, completion: @escaping (UIImage?) -> Void) {
         let url = URL.imageOverideURL
         guard !downloading.contains(key) else {
@@ -42,10 +44,12 @@ class Downloader {
         }.resume()
     }
     
+    /// Check if an image is able to repeat download
     private func cr(_ attempt: Int) -> Bool {
         return attempt >= 4
     }
     
+    /// Repeat the download
     private func rpt(url: URL, for key: String, attempt: Int, completion: @escaping (UIImage?) -> Void) {
         guard cr(attempt) else { completion(nil); return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {

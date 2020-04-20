@@ -13,7 +13,7 @@ struct DetailComponent: Component {
     var dispatcher: Dispatcher?
     
     func prepareView(_ view: DetailView, item: DetailItemViewState) {
-        // Runs only when the view first launches
+        // Setup the view
         view.image.layer.cornerRadius = view.image.frame.height / 4
         view.image.layer.masksToBounds = true
         view.image.image = UIImage.clearImage
@@ -33,7 +33,7 @@ struct DetailComponent: Component {
     }
     
     func configureView(_ view: DetailView, item: DetailItemViewState) {
-        // Configure the view here
+        // Configure the view
         let manager = CacheManager.shared
         let deal = item.deal
         if manager.contains(key: deal.id) {

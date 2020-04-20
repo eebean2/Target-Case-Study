@@ -45,14 +45,17 @@ public final class CacheManager {
         }
     }
     
+    /// Fetch an image from cache
     public func fetch(for key: UUID) -> UIImage? {
         return imageCache.object(forKey: NSString(string: key.uuidString))
     }
 
+    /// Check if the cache contains an image
     public func contains(key: UUID) -> Bool {
         return imageCache.object(forKey: NSString(string: key.uuidString)) != nil
     }
     
+    /// Remove an image from the cahce
     public func remove(for key: UUID) {
         imageCache.removeObject(forKey: NSString(string: key.uuidString))
     }
@@ -63,7 +66,9 @@ public extension CacheManager {
         public let rawValue: Int
         public init(rawValue: Int) { self.rawValue = rawValue }
         
+        /// Overrite current image in cache
         static let forceOverwrite   = Options(rawValue: 1 << 0)
+        /// Download a new image to store in the cache
         static let download         = Options(rawValue: 1 << 1)
     }
 }

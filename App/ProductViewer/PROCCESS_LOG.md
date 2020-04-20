@@ -38,6 +38,13 @@ This log is here to document my thought process as well as the length of my proj
 
 - Due to the time it took to load, and the number of failures loading the images, the image site has been changed to PlaceBeard.it using notag images
 
+### Sauturday April 18th, Sunday April 19th, and Monday April 20th
+
+- Rewrote Details to be as much like List as possible (taking advantage of Tempo)
+- Rewrote much of the app as possible to take advantage of Tempo to follow existing patterns
+- Cleaned up CacheManager, rewrote DownloadHelper (now just Downloader)
+- Due to a problem displaying images (I 100% stuck to my guns and it ended up with a problem reloading the collectionview to display images) scroll to reload the images
+
 
 # API/ SDK's Used
 

@@ -11,6 +11,7 @@ struct ProductListComponent: Component {
     var dispatcher: Dispatcher?
 
     func prepareView(_ view: ProductListView, item: ListItemViewState) {
+        // Setup the view
         view.productImage.layer.cornerRadius = view.productImage.frame.width / 4
         view.productImage.layer.masksToBounds = true
         view.titleLabel.textColor = .targetJetBlackColor
@@ -20,25 +21,24 @@ struct ProductListComponent: Component {
     }
     
     func configureView(_ view: ProductListView, item: ListItemViewState) {
-        print("Receiving: " + item.deal.title)
-        view.titleLabel.text = item.title
-        view.aisleLabel.text = item.aisle
-        if let price = item.salePrice {
-            view.saleLabel.text = price
-            view.priceLabel.text = item.price
-        } else {
-            view.saleLabel.text = item.price
-            view.priceLabel.text = "Great Deal!"
+        // Configure the view
+        let manager = CacheManager.shared
+        let deal = item.deal
+        if manager.contains(key: deal.id) {
+            view.productImage.image = manager.fetch(for: deal.id)
         }
-        if CacheManager.shared.contains(key: item.id) {
-            view.productImage.image = CacheManager.shared.fetch(for: item.id)
+        view.titleLabel.text = deal.title
+        view.aisleLabel.text = "Aisle \(deal.aisle.capitalized)"
+        if let price = deal.salePrice {
+            view.saleLabel.text = price
+            view.priceLabel.text = deal.price
         } else {
-            view.productImage.image = UIImage.clearImage
+            view.saleLabel.text = deal.price
+            view.priceLabel.text = "Great Deal!"
         }
     }
     
     func selectView(_ view: ProductListView, item: ListItemViewState) {
-        print("Sending: \(item.title)")
         dispatcher?.triggerEvent(ListItemPressed(deal: item.deal))
     }
 }
