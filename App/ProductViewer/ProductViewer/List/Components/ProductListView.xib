@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductListView" customModule="ProductViewer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="99"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" image="Target" translatesAutoresizingMaskIntoConstraints="NO" id="Z4l-Mx-TSZ">
+                    <rect key="frame" x="5" y="5" width="89" height="89"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Z4l-Mx-TSZ" secondAttribute="height" multiplier="1:1" id="7WG-P7-bew"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="E2S-s7-S3c">
+                    <rect key="frame" x="102" y="5" width="240" height="89"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1X-xt-abR">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="39"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$salePrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhF-1c-xHV">
+                            <rect key="frame" x="0.0" y="39" width="240" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.99607843139999996" green="0.2470588235" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reg $price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNh-0e-RWj">
+                            <rect key="frame" x="0.0" y="59.5" width="240" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aisle aisle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npt-T7-hYk">
+                            <rect key="frame" x="0.0" y="75.5" width="240" height="13.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="E2S-s7-S3c" secondAttribute="bottom" constant="5" id="Ggy-5I-HWS"/>
+                <constraint firstItem="E2S-s7-S3c" firstAttribute="leading" secondItem="Z4l-Mx-TSZ" secondAttribute="trailing" constant="8" id="NGQ-ZK-UnO"/>
+                <constraint firstItem="Z4l-Mx-TSZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="YO9-xc-FrA"/>
+                <constraint firstAttribute="trailing" secondItem="E2S-s7-S3c" secondAttribute="trailing" constant="5" id="YVE-03-RaI"/>
+                <constraint firstItem="E2S-s7-S3c" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="cD6-aD-rag"/>
+                <constraint firstAttribute="bottom" secondItem="Z4l-Mx-TSZ" secondAttribute="bottom" constant="5" id="cXh-h0-M2j"/>
+                <constraint firstItem="Z4l-Mx-TSZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="jOl-sb-ZWX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="aisleLabel" destination="npt-T7-hYk" id="wta-Df-kU9"/>
+                <outlet property="priceLabel" destination="vNh-0e-RWj" id="3Me-lq-cPV"/>
+                <outlet property="productImage" destination="Z4l-Mx-TSZ" id="YlH-mH-87f"/>
+                <outlet property="saleLabel" destination="OhF-1c-xHV" id="O7w-aS-6C3"/>
+                <outlet property="titleLabel" destination="N1X-xt-abR" id="g9W-Qn-Y33"/>
+            </connections>
+            <point key="canvasLocation" x="265.94202898550725" y="299.66517857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Target" width="400" height="400"/>
+    </resources>
+</document>
