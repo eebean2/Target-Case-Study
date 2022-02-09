@@ -1,7 +1,13 @@
 # Target iOS Case Study
 
 
-You have been given an proof-of-concept iOS project that displays, simply, a list of things. Your goal is to expand on the app to display a list of deals currently offered by Target, and to provide additional detailed information on those deals. 
+##### Can I use this?
+
+Yes. This case study got me not only the interview, but all the way to the final round. IMPROVE this case study. It was determined it was not senior iOS Engineer worthy, and I agree with that as it has multiple flaws that could be addresed. Feel free to submit pull request or open issues for changes as I will happily keep this project open.
+
+##### Description
+
+You have been given an proof-of-concept iOS project that displays, simply, a list of things. Your goal is to expand on the app to display a list of deals currently offered by Target, and to provide additional detailed information on those deals. The Target iOS Case Study is my take on this challenge, additional instructions follow along with guidelines on the challenge.
 
 ##### Instructions
 
